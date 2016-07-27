@@ -6,17 +6,23 @@
 	 * @param  {string} val        The string typing into the input text field
 	 * @param  {string} searchItem The class of the items to be search / filtered
 	 */
-	function filterSearchItems( val, searchItem ) {
+	function filterSearchItems( val, searchItemParent, searchItem ) {
 
 		$( '.' + searchItem + '' ).each( function() {
 
 			content = $( this ).html();
 			content = content.toLowerCase();
 
+			// console.log( content );
+
 			if ( -1 === content.search( val ) ) {
-				$( this ).hide();
+
+				console.log( 'hiding' );
+				$( this ).closest( '.' + searchItemParent ).hide();
 			} else {
-				$( this ).show();
+
+				console.log( 'showing' );
+				$( this ).closest( '.' + searchItemParent ).show();
 			}
 
 		} );
@@ -30,17 +36,17 @@
 	 * @param  {string} searchInput       The class of the text box to use as a search box
 	 * @param  {string} searchItem        A class applied to all items to be searched / filtered
 	 */
-	function liveSearch( searchInput, searchItem ) {
+	function liveSearch( searchInput, searchItemParent, searchItem ) {
 
 		$( '.' + searchInput + '' ).on( 'keyup', function() {
 			var val = $( this ).val();
 
 			console.log( val );
 
-			filterSearchItems( val, searchItem );
+			filterSearchItems( val, searchItemParent, searchItem );
 		} );
 	}
 
-	liveSearch( 'search-box', 'search-item' );
+	liveSearch( 'search-box', 'search-item-parent', 'search-item' );
 
 })(jQuery);
