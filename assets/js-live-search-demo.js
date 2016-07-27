@@ -14,15 +14,9 @@
 			content = $( this ).html();
 			content = content.toLowerCase();
 
-			// console.log( content );
-
 			if ( -1 === content.search( val ) ) {
-
-				console.log( 'hiding' );
 				$( this ).closest( '.' + searchItemParent ).hide();
 			} else {
-
-				console.log( 'showing' );
 				$( this ).closest( '.' + searchItemParent ).show();
 			}
 
@@ -42,8 +36,6 @@
 
 		$( '.' + searchInput + '' ).on( 'keyup', function() {
 			var val = $( this ).val();
-
-			console.log( val );
 
 			filterSearchItems( val, searchItemParent, searchItem );
 		} );
