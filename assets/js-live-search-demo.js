@@ -1,9 +1,10 @@
 (function($){
 
-
 	/**
-	 * [filterSearchItems description]
+	 * This function handles the actual logic of showing or hiding search results
+	 *
 	 * @param  {string} val        The string typing into the input text field
+	 * @param  {string} searchItemParent  The class of the item to actually hide
 	 * @param  {string} searchItem The class of the items to be search / filtered
 	 */
 	function filterSearchItems( val, searchItemParent, searchItem ) {
@@ -34,7 +35,8 @@
 	 * It then fires liveSearch(); which controls the showing and hiding of search / filter results
 	 *
 	 * @param  {string} searchInput       The class of the text box to use as a search box
-	 * @param  {string} searchItem        A class applied to all items to be searched / filtered
+	 * @param  {string} searchItemParent  The class of the item to actually hide
+	 * @param  {string} searchItem        A class applied to all items to be searched / filtered. Typically some type of title
 	 */
 	function liveSearch( searchInput, searchItemParent, searchItem ) {
 
