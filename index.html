@@ -16,12 +16,18 @@
 		margin: 0 0 10px 0;
 	}
 	</style>
+
 </head>
 <body>
 
 
 <div>
-	<input type="text" class="search-box">
+
+	<p>.search-item-parent represents the wrapper that should be hidden / shown</p>
+	<p>.search-item represents the text (string) that you are searching for</p>
+	<p>Works with multiple nested search strings, .i.e.</p>
+	<input type="text" class="search-box" placeholder="type shit here">
+
 	<ul>
 		<li class="search-item-parent"><a href="google.com"><span class="search-item">Compressed a</span></a></li>
 		<li class="search-item-parent"><a href="google.com"><span class="search-item">dwidth an</span></a></li>
@@ -39,12 +45,13 @@
 
 
 
-	<div class="search-item-parent">
+	<div class="search-item-parent this-is-an-example-of-nested-search-strings">
 		<a href="google.com">
 			<span class="search-item">Compressed a</span>
 		</a>
 		<p class="search-item">Im am an excerpt Completely true</p>
 	</div>
+
 	<div class="search-item-parent"><a href="google.com"><span class="search-item">dwidth an</span></a></div>
 	<div class="search-item-parent"><a href="google.com"><span class="search-item">You can also do</span></a></div>
 	<div class="search-item-parent"><a href="google.com"><span class="search-item">map file is not required for us</span></a></div>
